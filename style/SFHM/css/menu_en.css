@@ -1,0 +1,95 @@
+
+/* Adjusting the margins, paddings and no list styles */
+.nav {
+margin:0;
+padding:0;
+list-style:none;
+height:49px;
+display:block;
+}
+
+/* Little tricking with positions */
+.nav li {
+/*float:left; /* Show list items inline */
+/*width:150px;*/
+position:relative;
+float:left;
+height:49px;
+background:url(images/nav-li.gif) no-repeat right 0;
+padding:0 19px 0 17px;
+z-index:101;
+}
+
+/* Playing with Main Categories */
+.nav li a {
+/*background:#7bca9f;*/
+color:#727272;
+text-decoration:none;
+padding-left:24px;
+padding-right:24px;
+/*color:#fff;*/
+display:block; /* Making sure a element covers whole li area */
+/*padding:8px 7px 8px 7px;*/
+text-decoration:none; /* No underline */
+text-align:center;
+}
+
+.nav li a:hover {
+	/*background:#585858;*/
+	/*color:#F2861D;*/
+        /*border-top:1px solid #F2861D;*/
+        color:#39bef0;
+}
+
+/* Sub Cat Menu stuff*/
+.nav ul {
+visibility: visible;
+position:absolute;
+left:0;
+display:none; /* Hide it by default */
+margin:0 0 0 -1px;
+padding:0;
+list-style:none;
+/*border-bottom:3px solid #F2861D;*/
+border:1px solid #000 ;
+border-top:0px;
+z-index:101;
+background: #e1e1e1;
+}
+
+.nav ul li {
+width:140px;
+float:left;
+border-top:none;
+color:#727272;
+padding: 0px;
+line-height:2px;
+height: 30px;
+overflow: hidden;
+}
+
+.nav ul li:first-of-type{
+    padding-top: 10px;
+}
+
+/* Sub Cat menu link properties */
+.nav ul a {
+display:block; /* Making sure a element covers whole li area */
+height:15px;
+padding:8px 7px 13px 7px;
+color:#727272;
+text-decoration:none;
+border-top:none;
+}
+
+.nav ul a:hover {
+color:#39bef0;
+}
+
+.nav li:hover ul {
+    display: block;
+}
+
+li.lastitem{
+    background: none;
+}
