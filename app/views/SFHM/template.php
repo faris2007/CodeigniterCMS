@@ -73,14 +73,14 @@
             <br />
             <div class="footer">
             <span class="lf">Copyright &copy; 2013 <a href="#">SFHP-Makkah</a> - All Rights Reserved</span>
-            <span class="highlight"><?/*
+            <span class="highlight">
                 <select onchange="window.location.assign('?lang='+$('#lang_site').val())" id="lang_site">
                     <?php if($LANGS): ?>
                         <?php foreach ($LANGS as $row): ?>
                             <option<?=($LANG_EXT == $row->ext)? ' selected="selected"':''?> value="<?=$row->ext?>"><?=$row->name?></option>
                         <?php endforeach; ?>
                     <?php endif; ?>
-                </select>   |*/?>
+                </select>   |
                 <a href="<?=base_url()?>"><?=$this->lang->line('global_mainpage')?> -</a>
                 <?php if(!$userInfo): ?>
                     <a href="<?=base_url()?>login"><?=$this->lang->line('global_login')?></a>

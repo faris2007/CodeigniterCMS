@@ -226,7 +226,7 @@ $(document).ready(function(){
     
     $(".styleDate").datepicker();
     tinymce.init({
-    selector: "1textarea",
+    selector: "textarea",
     theme: "modern",
     plugins: [
          "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
@@ -239,9 +239,9 @@ $(document).ready(function(){
    toolbar3: "| styleselect formatselect fontselect fontsizeselect |table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen ",
    image_advtab: true ,
    
-   external_filemanager_path:"http://10.30.19.15/cms/filemanager/",
+   external_filemanager_path:"http://127.0.0.1/cms/filemanager/",
    filemanager_title:"File Manager" ,
-   external_plugins: { filemanager : "http://10.30.19.15/cms/filemanager/plugin.min.js"},
+   external_plugins: { filemanager : "http://127.0.0.1/cms/filemanager/plugin.min.js"},
    style_formats: [
         {title: 'Bold text', inline: 'b'},
         {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},

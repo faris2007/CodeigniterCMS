@@ -79,33 +79,7 @@
                 </tr>
             </tbody>
         </table>
-        <br /><?/*
-        <table class="tbl" style="width:90%;">
-            <thead>
-                <tr>
-                    <td colspan="2"><?= $this->lang->line('setting_email_setting')?></td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><?= $this->lang->line('setting_server')?></td>
-                    <td><input type="text" name="hostmail" value="<?=$HOSTMAIL?>" /></td>
-                </tr>
-                <tr>
-                    <td><?= $this->lang->line('setting_email')?></td>
-                    <td><input type="text" name="namemail" value="<?=$NAMEMAIL?>" /></td>
-                </tr>
-                <tr>
-                    <td> <?= $this->lang->line('setting_password')?></td>
-                    <td><input type="password" name="passmail" placeholder="<?= $this->lang->line('setting_empty_no_change')?>"  /></td>
-                </tr>
-                <tr>
-                    <td><?= $this->lang->line('setting_port')?></td>
-                    <td><input type="text" name="portmail" value="<?=$PORTMAIL?>" /></td>
-                </tr>
-            </tbody>
-        </table>
-        <br />*/?>
+        <br />
         <table class="tbl" style="width:90%;">
             <thead>
                 <tr>

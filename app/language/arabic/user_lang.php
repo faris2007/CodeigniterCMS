@@ -9,7 +9,7 @@
  */
 
 //  $lang['FileName_FunctionName']  = "";
-$lang['user_add_success_msg'] = "شكراً لتسجيلك في موقعنا ".br(1)." تنبيه: قد يصل الأيميل للبريد المهمل الرجاء التأكد منه";
+$lang['user_add_success_msg'] = "شكراً لتسجيلك في موقعنا "."<br />"." تنبيه: قد يصل الأيميل للبريد المهمل الرجاء التأكد منه";
 $lang['user_error_already_register_msg'] =  "خطأ انت مسجل لدينا سابق يمكنك استخدام هذا ";
 $lang['user_used_reset_password'] = "النموذج لإستعادة كلمة المرور";
 $lang['user_not_match_password'] = 'خطأ في أحدى كلمات المرور يبدو انها غير متطابقة';

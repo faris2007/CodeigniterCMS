@@ -9,7 +9,7 @@
  */
 
 //  $lang['FileName_FunctionName']  = "";
-$lang['user_add_success_msg'] = "Thanks, we sent welcome message to your email".br(1)."Note: Sometimes the message arrived in \"Junk Mail\"";
+$lang['user_add_success_msg'] = "Thanks, we sent welcome message to your email"."<br />"."Note: Sometimes the message arrived in \"Junk Mail\"";
 $lang['register_error_already_register_msg'] =  "Error: you are already register before if you forget your account you can use";
 $lang['register_used_reset_password'] = "This form for reset password";
 $lang['user_not_match_password'] = 'Error: retype password is not match with password';

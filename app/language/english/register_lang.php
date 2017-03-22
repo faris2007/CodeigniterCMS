@@ -12,7 +12,7 @@
 
 $lang['register_index'] = "Registertion Page";
 $lang['register_closed_msg'] = 'Sorry, The registeration closed now';
-$lang['register_activation_msg'] = 'Thank you, we will sent a message after active your account'.br(1).'Note: Sometimes the message arrived in "Junk Mail"';
+$lang['register_activation_msg'] = 'Thank you, we will sent a message after active your account'."<br />".'Note: Sometimes the message arrived in "Junk Mail"';
 $lang['register_success_msg'] = 'Thank you, Your account is active and you can use our website';
 $lang['register_error_already_register_msg'] =  "Error: you are already register before if you forget your account you can use";
 $lang['register_used_reset_password'] = "This form for reset password";

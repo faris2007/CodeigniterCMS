@@ -1,26 +1,39 @@
 <div>
-    <form method="post">
-        <table class="tbl" style="width:90%;direction:rtl">
+    <form method="post"  accept-charset="utf-8">
+        <table class="tbl" style="width:90%;">
             <thead>
                 <tr>
-                    <td colspan="2">الإعدادات العامة</td>
+                    <td colspan="2"><?= $this->lang->line('global_setting')?></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>أسم الموقع</td>
+                    <td> <?= $this->lang->line('setting_view_site_name')?> </td>
                     <td><input type="text" name="sitename" value="<?=$SITENAME?>" /></td>
                 </tr>
                 <tr>
-                    <td>رابط الموقع</td>
+                    <td><?= $this->lang->line('setting_view_url')?></td>
                     <td><input type="text" name="siteurl" value="<?=$SITEURL?>" /></td>
                 </tr>
                 <tr>
-                    <td>أيميل إدارة الموقع</td>
+                    <td><?= $this->lang->line('setting_email_admin')?></td>
                     <td><input type="text" name="siteemail" value="<?=$SITEEMAIL?>" /></td>
                 </tr>
                 <tr>
-                    <td>التصميم المختار للموقع</td>
+                    <td> <?= $this->lang->line('setting_defualt_lang')?></td>
+                    <td>
+                        <select name="lang" id="lang">
+                            <option selected="selected" value=""><?= $this->lang->line('global_selected_language')?></option>
+                            <?php if(is_array($LANGS)): ?>
+                                <?php foreach($LANGS as $row): ?>
+                                    <option<?=($SITELANG == $row->id)? ' selected="selected"':''?> value="<?=$row->id?>"><?=$row->name?></option>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><?=$this->lang->line('setting_chose_desgin')?></td>
                     <td>
                         <select name="style">
                             <?php if($STYLE): ?>
@@ -32,10 +45,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>الصفحة الرئيسية للموقع</td>
+                    <td><?= $this->lang->line('global_mainpage')?></td>
                     <td>
                         <select name="homepage">
-                            <option<?=($HOMEPAGE == 'home')? ' selected="selected"':''?> value="home">الافتراضي</option>
+                            <option<?=($HOMEPAGE == 'home')? ' selected="selected"':''?> value="home"><?= $this->lang->line('global_defualt')?></option>
                             <?php if($PAGES): ?>
                                 <?php foreach ($PAGES as $value): ?>
                                     <option<?=($HOMEPAGE == $value->id)? ' selected="selected"':''?> value="<?=$value->id?>"><?=$value->title?></option>
@@ -45,15 +58,15 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>تفعيل الموقع</td>
-                    <td><input type="radio" name="siteenable"<?=($SITEENABLE == 1)?' checked="checked"':''?> value="1" />نعم <input type="radio" name="siteenable"<?=($SITEENABLE == 0)?' checked="checked"':''?> value="0" />لا</td>
+                    <td><?= $this->lang->line('setting_active_site')?></td>
+                    <td><input type="radio" name="siteenable"<?=($SITEENABLE == 1)?' checked="checked"':''?> value="1" /><?= $this->lang->line('global_yes')?> <input type="radio" name="siteenable"<?=($SITEENABLE == 0)?' checked="checked"':''?> value="0" /><?= $this->lang->line('global_no')?></td>
                 </tr>
                 <tr>
-                    <td>رسالة الإغلاق</td>
+                    <td><?= $this->lang->line('setting_close_msg')?></td>
                     <td><textarea name="disable_msg"><?=$DISABLE_MSG?></textarea></td>
                 </tr>
                 <tr>
-                    <td>المجموعة المستثناه من الأغلاق</td>
+                    <td><?= $this->lang->line('setting_exception_group')?></td>
                     <td>
                         <select name="group_disable">
                             <?php if($GROUP): ?>
@@ -67,45 +80,19 @@
             </tbody>
         </table>
         <br />
-        <table class="tbl" style="width:90%;direction:rtl">
+        <table class="tbl" style="width:90%;">
             <thead>
                 <tr>
-                    <td colspan="2">إعدادات الايميل</td>
+                    <td colspan="2"><?= $this->lang->line('setting_reg_setting')?></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>السيرفر</td>
-                    <td><input type="text" name="hostmail" value="<?=$HOSTMAIL?>" /></td>
+                    <td><?= $this->lang->line('setting_active_reg')?></td>
+                    <td><input type="radio" name="registerenable"<?=($REGISTERENABLE == 1)?' checked="checked"':''?> value="1" /><?= $this->lang->line('global_yes')?> <input type="radio" name="registerenable"<?=($REGISTERENABLE == 0)?' checked="checked"':''?> value="0" /><?= $this->lang->line('global_no')?></td>
                 </tr>
                 <tr>
-                    <td>الأيميل</td>
-                    <td><input type="text" name="namemail" value="<?=$NAMEMAIL?>" /></td>
-                </tr>
-                <tr>
-                    <td>كلمة المرور (تنبيه للحماية لن يتم أظهار كلمة المرور السابق)</td>
-                    <td><input type="password" name="passmail" placeholder="لن يتم تغيير كلمة المرور أذا ترك هذا الحقل فارغ"  /></td>
-                </tr>
-                <tr>
-                    <td>البورت</td>
-                    <td><input type="text" name="portmail" value="<?=$PORTMAIL?>" /></td>
-                </tr>
-            </tbody>
-        </table>
-        <br />
-        <table class="tbl" style="width:90%;direction:rtl">
-            <thead>
-                <tr>
-                    <td colspan="2">إعدادات التسجيل</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>تفعيل التسجيل</td>
-                    <td><input type="radio" name="registerenable"<?=($REGISTERENABLE == 1)?' checked="checked"':''?> value="1" />نعم <input type="radio" name="registerenable"<?=($REGISTERENABLE == 0)?' checked="checked"':''?> value="0" />لا</td>
-                </tr>
-                <tr>
-                    <td>المجموعة الخاصة بالأعضاء الجدد</td>
+                    <td><?= $this->lang->line('setting_group_for_new_member')?></td>
                     <td>
                         <select name="register_group">
                             <?php if($GROUP): ?>
@@ -117,11 +104,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>تنشيط العضوية تلقائي ؟</td>
-                    <td><input type="radio" name="registeractive"<?=($REGISTERACTIVE == 1)?' checked="checked"':''?> value="1" />نعم <input type="radio" name="registeractive"<?=($REGISTERACTIVE == 0)?' checked="checked"':''?> value="0" />لا</td>
+                    <td><?= $this->lang->line('setting_auto_active')?></td>
+                    <td><input type="radio" name="registeractive"<?=($REGISTERACTIVE == 1)?' checked="checked"':''?> value="1" /><?= $this->lang->line('global_yes')?> <input type="radio" name="registeractive"<?=($REGISTERACTIVE == 0)?' checked="checked"':''?> value="0" /><?= $this->lang->line('global_no')?></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="submit" value="حفظ" /></td>
+                    <td colspan="2"><input type="submit" value="<?= $this->lang->line('global_save')?>" /></td>
                 </tr>
             </tbody>
         </table>
